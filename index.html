@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      :root {
+        --icon-chevron: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-chevron-right"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M9 6l6 6l-6 6" /></svg>');
+
+        --icon-alert: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="%23d50027" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-exclamation-circle"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0" /><path d="M12 9v4" /><path d="M12 16v.01" /></svg>');
+
+        --icon-lightbulb: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="%23007e80" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-bulb"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M3 12h1m8 -9v1m8 8h1m-15.4 -6.4l.7 .7m12.1 -.7l-.7 .7" /><path d="M9 16a5 5 0 1 1 6 0a3.5 3.5 0 0 0 -1 3a2 2 0 0 1 -4 0a3.5 3.5 0 0 0 -1 -3" /><path d="M9.7 17l4.6 0" /></svg>');
+
+        --icon-info: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="%23007e80" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-info-circle"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M3 12a9 9 0 1 0 18 0a9 9 0 0 0 -18 0" /><path d="M12 9h.01" /><path d="M11 12h1v4h1" /></svg>');
+
+        --icon-resources: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="%23007e80" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-book"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M3 19a9 9 0 0 1 9 0a9 9 0 0 1 9 0" /><path d="M3 6a9 9 0 0 1 9 0a9 9 0 0 1 9 0" /><path d="M3 6l0 13" /><path d="M12 6l0 13" /><path d="M21 6l0 13" /></svg>');
+      }
+
+      body {
+        margin-inline: auto;
+
+        max-inline-size: 768px;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+          Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+          sans-serif;
+        padding: 1.5rem;
+        color: #2c2c2c;
+      }
+
+      body * {
+        margin-block: 0;
+        padding-block: 0;
+        box-sizing: border-box;
+      }
+
+      li {
+        line-height: 1.7rem;
+      }
+
+      aside,
+      details {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+
+      aside h3 {
+        font-size: 1rem;
+        font-weight: bold;
+        color: #007e80;
+      }
+
+      summary {
+        margin-block-start: 0.75rem;
+        font-weight: 700;
+      }
+
+      aside {
+        position: relative;
+        padding: 1.5rem;
+        background-color: #f6fcfd;
+        border-left: 0.25rem solid #007e80;
+        border-radius: 0.25rem 0.75rem 0.75rem 0.25rem;
+        margin-block: 1.5rem 3rem;
+        z-index: 0;
+      }
+
+      .aside-alert > *:first-child::before {
+        content: var(--icon-alert);
+      }
+      .aside-tip > *:first-child::before {
+        content: var(--icon-lightbulb);
+      }
+      .aside-info > *:first-child::before {
+        content: var(--icon-info);
+      }
+      .aside-resources > *:first-child::before {
+        content: var(--icon-resources);
+      }
+
+      aside > *:first-child::before {
+        margin: 0;
+        padding: 0;
+        line-height: 0;
+        position: absolute;
+        transform: translate(-112.5%, -100%);
+        z-index: 1;
+        background-color: white;
+        width: 3rem;
+        height: 3rem;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .aside-alert h3 {
+        color: ;
+      }
+
+      summary {
+        list-style: none; /* Firefox */
+      }
+
+      summary::-webkit-details-marker {
+        display: none; /* Chrome, Edge, Safari */
+      }
+
+      details summary::before {
+        content: var(--icon-chevron);
+        margin-inline-end: 0.25rem;
+        display: inline-block;
+        transform: translate(-25%, 17.5%);
+        transition: transform 0.2s ease-in-out;
+      }
+
+      details[open] summary::before {
+        transform: translate(-25%, 7.5%) rotate(90deg);
+      }
+    </style>
+    <title>Document</title>
+  </head>
+  <body>
+    <aside class="aside-alert">
+      <h3>Belangrijk</h3>
+      <p>Dit is info waar je best rekening mee houdt.</p>
+    </aside>
+    <aside class="aside-tip">
+      <h3>Onze tip</h3>
+      <p>Hier vind je een nuttige tip van onze experts.</p>
+      <details>
+        <summary>Toon meer</summary>
+        <p>Dit zijn extra details.</p>
+      </details>
+    </aside>
+    <aside class="aside-info">
+      <h3>Goed om weten</h3>
+      <details>
+        <summary>Toon meer</summary>
+        <p>Dit zijn aanvullende details.</p>
+      </details>
+    </aside>
+    <aside class="aside-resources">
+      <h3>Meer weten</h3>
+      <p>Meer lezen:</p>
+      <ul>
+        <li><a href="#section1">Link</a></li>
+        <li><a href="#section2">Link</a></li>
+        <li><a href="#section3">Link</a></li>
+      </ul>
+    </aside>
+  </body>
+</html>
